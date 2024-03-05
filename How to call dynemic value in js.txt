@@ -1,0 +1,50 @@
+const games=["Cod","velo","pubg"]
+const employedetail={
+  firstname:'kush',
+  lastname:'parekh',
+  designation:'webdeveloper',
+
+
+
+}
+function Viewemploye()
+{
+ return(
+  <div>
+    <h2>
+      { employedetail.firstname} {employedetail.lastname}
+    </h2>
+    <p>{employedetail.designation}</p>
+  </div>
+ )
+ 
+}
+
+function Getnames(num)
+{
+  return Math.floor(Math.random()*(num+1))
+}
+function Header()
+{
+  return(<header>This is header</header>)
+}
+
+
+
+
+function App() {
+  const gamevalue=Getnames()
+  return (
+    
+    <div>
+      <Header/>
+      <Content/>
+      <Viewemploye/>
+      {
+        games[gamevalue]
+      }
+
+      
+    </div>
+  );
+}

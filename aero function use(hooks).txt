@@ -1,0 +1,27 @@
+[App.js] 
+       
+
+
+function App()
+{
+  let tabcontent='this is tab'
+  const[selectedmenu,setselectedmenu]=useState('Please select button');
+    function hendleSelect(selectedbutton)
+    {
+    console.log('Selected');
+    console.log(selectedbutton);
+    tabcontent=selectedbutton;
+    console.log(tabcontent);
+
+    }
+return(
+      <section>
+           <menu>
+
+	  <Tabbutton onSelect={()=>hendleSelect('html')}>html</Tabbutton>
+          <Tabbutton onSelect={()=>hendleSelect('css')}>css</Tabbutton>
+          <Tabbutton onSelect={()=>hendleSelect('javascript')}>javascript</Tabbutton>
+          </menu> 
+          {selectedmenu}
+      </section>
+)

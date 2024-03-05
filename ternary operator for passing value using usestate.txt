@@ -1,0 +1,109 @@
+[data.js]
+
+export const programming={
+    html:{
+        title:'html',
+        description:'HTML stands for HyperText Markup Language, which is the standard document format for web pages that is supported by all modern browsers',
+        code:`<html> 
+  
+        <head> 
+            <title>HTML Web Page</title> 
+        </head> 
+          
+        <body> 
+            <h1>GeeksforGeeks</h1> 
+            <p>A computer science portal for geeks</p> 
+        </body> 
+          
+        </html>`
+    },
+    css:{
+        title:'css',
+        description:'CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS is with a simple syntax example and also covers some key terms about the language.',
+        code:`h1 {
+            color: red;
+            font-size: 5em;
+          }
+          
+          p {
+            color: black;
+          }`
+    },
+    javascript:{
+        title:'javascript',
+        description:'JavaScript is a scripting or programming language that allows you to implement complex features on web pages',
+        code:`<html>
+        <body>
+        
+        <h2>JavaScript Functions</h2>
+        
+        <p>This example calls a function which performs a calculation, and returns the result:</p>
+        
+        <p id="demo"></p>
+        
+        <script>
+        function myFunction(p1, p2) {
+            return p1 * p2;
+        }
+        document.getElementById("demo").innerHTML = myFunction(4, 3);
+        </script>
+        
+        </body>
+        </html>
+        `,
+    }
+
+}
+
+[app.js]
+
+import{usestate} from 'react';
+
+const[selectedmenu,setselectedmenu]=usestate();
+
+{
+<div>
+<h3>
+{[programming[selectedmenu].title}
+
+<h3/>
+<p>
+{programming[selectedmenu].description}
+<p/>
+<pre>
+<code>
+{programming[selectedmenu].code}
+
+<code/>
+<pre/>
+<div/>
+}
+
+[ternary operator]
+{
+{!selectedmenu?'please select menu':(}
+<div>
+<h3>
+{[programming[selectedmenu].title}
+
+<h3/>
+<p>
+{programming[selectedmenu].description}
+<p/>
+<pre>
+<code>
+{programming[selectedmenu].code}
+
+<code/>
+<pre/>
+<div/>
+) }
+}
+
+
+
+
+
+
+
+

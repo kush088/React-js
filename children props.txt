@@ -1,0 +1,38 @@
+[Tabbutton.js]
+export function Tabbutton({children,onSelect})
+{
+    return(
+        <li>
+            <button onClick={onSelect}>
+              {children}
+              
+            </button>
+        </li>
+    )
+}
+
+
+
+[app.js]
+import { Tabbutton } from './components/Tabbutton.js';
+
+ function app()
+{
+
+ function hendleSelect()
+  {
+    console.log('Selected')
+  }
+return(
+
+   <section>
+        <menu>
+          <Tabbutton onSelect={hendleSelect}>html</Tabbutton>
+          <Tabbutton onSelect={hendleselect}>css</Tabbutton>
+          <Tabbutton onSelect={hendleselect}>javascript</Tabbutton>
+        </menu>
+      </section>
+
+      )
+
+}
