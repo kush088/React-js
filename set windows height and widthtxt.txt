@@ -1,0 +1,39 @@
+import { useEffect, useState } from "react";
+
+function WindowsSize(){
+    const[size,setsize]=useState(window.innerWidth);
+    useEffect(()=>{
+        const handleResize = ()=>setsize(window.innerWidth);
+        window.addEventListener("resize",handleResize);
+        return()=>window.removeEventListener("resize",handleResize);
+    },[])
+    return size;
+}   
+function WindowsHeight(){
+    const[Height,setheight]=useState(window.innerWidth);
+    useEffect(()=>{
+        const handleResize = ()=>setheight(window.innerHeight);
+        window.addEventListener("resize",handleResize);
+        return()=>window.removeEventListener("resize",handleResize);
+    },[])
+    return Height;
+}   
+function Windows(){
+    const size=WindowsSize();
+    const Height=WindowsHeight();
+return(
+    <>
+    <div>
+    <p>
+        Windows:{size}
+        <br></br>
+        WindowsHeight:{Height}
+    </p>
+
+    </div>
+    </>
+)
+
+
+}
+export default Windows;
